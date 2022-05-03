@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>reCAPTCHA</title>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>    
+  </head>
+  <body>
+    <form id="myform" action="/verify" method="POST">
+      <div class="g-recaptcha" id="g-recaptcha" data-type="image" data-sitekey="your_key"></div>
+      <br/>
+      <input type="hidden" id="captcha-response" name="captcha-response" />
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+  <script type="text/javascript">
+    var onloadCallback = function() {
+    grecaptcha.render('g-recaptcha', {
+        'sitekey' : 'your_key',
+        'callback' : setResponse
+      });
+    };
+    function setResponse(response) {
+        //alert(response);
+        document.getElementById('captcha-response').value = response;
+    }
+  </script>
+</html>
+
