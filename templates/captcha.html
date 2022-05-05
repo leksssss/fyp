@@ -1,4 +1,23 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <title>Captcha Engine</title>
+    </head>
+    <body>
+      <div class="container" style=" width: 50%; margin-left : 35%">
+        <form action="\" method="POST"> 
+            {{ recaptcha }} 
+            <input type="submit" style="margin-top : 5%; margin-left : 18%" value="Submit">
+        </form>
+        <p>{{ message }}</p> 
+      </div>
+    </body>
+</html>
+
+
+
+
+<!-- <html>
   <head>
     <title>reCAPTCHA</title>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>    
@@ -24,4 +43,4 @@
     }
   </script>
 </html>
-
+ -->
